@@ -1,6 +1,6 @@
 <?php
 $url=getenv("API_URL");
-if($url){
+if(!$url){
     $url = "http://localhost:8080/pet/list";
 }
 
