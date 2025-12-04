@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    container_name: pets-api
+    restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+    ports:
+      - "8084:8080"
+  db:
+    image: mysql:8.0
+    container_name: pets-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./sql/mysql:/docker-entrypoint-initdb.d

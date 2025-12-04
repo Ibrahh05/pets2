@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: pets-api
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      SPRING_PROFILES_ACTIVE: neon
+    ports:
+      - "8080:8080"
